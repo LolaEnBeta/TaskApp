@@ -1,6 +1,14 @@
 import React from 'react';
 
 class TaskForm extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            name: "",
+            description: "",
+            priority: ""
+        }
+    }
     render() {
         return (
             <form>
