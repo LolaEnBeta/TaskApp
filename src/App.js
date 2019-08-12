@@ -4,7 +4,12 @@ import './App.css';
 import TaskForm from './components/TaskForm'
 
 class App extends React.Component {
-  
+  constructor() {
+    super();
+    this.state = {
+      tasks : []
+    }
+  }
   render() {
 
     return (
