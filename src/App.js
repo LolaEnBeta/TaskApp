@@ -6,7 +6,9 @@ class App extends React.Component {
   
   render() {
 
-    return ();
+    return (
+      <h1>Task App</h1>
+    );
   }
 }
 
