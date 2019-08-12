@@ -9,6 +9,7 @@ class TaskForm extends React.Component {
             priority: ""
         }
     }
+
     render() {
         return (
             <form>
@@ -36,6 +37,11 @@ class TaskForm extends React.Component {
                         <option value="medium">Medium</option>
                         <option value="high">High</option>
                     </select>
+                </div>
+                <div>
+                    <button>
+                        Save task
+                    </button>
                 </div>
             </form>
         );
