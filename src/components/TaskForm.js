@@ -35,7 +35,7 @@ class TaskForm extends React.Component {
                 <div>
                     <button onClick={this.saveTask.bind(this)} className="mt-3">
                         Save task
-                        </button>
+                    </button>
                 </div>
             </div>
         );

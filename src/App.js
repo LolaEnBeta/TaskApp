@@ -12,9 +12,19 @@ class App extends React.Component {
   }
 
   render() {
+    const removeTask = name => {
+      const taskIndex = this.state.tasks.map(task => {
+        return task.name
+      }).indexOf(name);
+
+      let tasks = this.state.tasks;
+      tasks.splice(taskIndex, 1);
+      this.setState({ tasks: tasks })
+    }
+
     const tasks = this.state.tasks.map(task => {
       return (
-        <Task
+        <Task onTaskDeleted={removeTask.bind(this)}
           name={task.name}
           description={task.description}
           priority={task.priority} />
@@ -38,4 +48,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+  export default App;
