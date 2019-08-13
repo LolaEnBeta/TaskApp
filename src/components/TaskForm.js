@@ -1,35 +1,29 @@
 import React from 'react';
 
 class TaskForm extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            name: "",
-            description: "",
-            priority: ""
-        }
-    }
+
 
     render() {
+
         return (
-            <form>
+            <div className="card mt-4">
                 <label htmlFor="name">
                     Task name:
-                </label>
+                    </label>
                 <div>
-                    <input type="text" name="name" id="name"/>
+                    <input type="text" name="name" id="name" />
                 </div>
 
                 <label htmlFor="description">
                     Description:
-                </label>
+                    </label>
                 <div>
                     <input type="text" name="description" id="description" />
                 </div>
 
                 <label htmlFor="priority">
                     Priority:
-                </label>
+                    </label>
                 <div>
                     <select id="priority" name="priority" >
                         <option value="">Select priority</option>
@@ -39,12 +33,25 @@ class TaskForm extends React.Component {
                     </select>
                 </div>
                 <div>
-                    <button>
+                    <button onClick={this.saveTask.bind(this)} className="mt-3">
                         Save task
-                    </button>
+                        </button>
                 </div>
-            </form>
+            </div>
         );
+    }
+    saveTask(e) {
+        const nameInput = document.getElementById("name");
+        const descriptionInput = document.getElementById("description");
+        const priorityInput = document.getElementById("priority");
+
+        let newTask = {
+            name: nameInput.value,
+            description: descriptionInput.value,
+            priority: priorityInput.value
+        }
+
+        this.props.onTaskCreated(newTask);
     }
 }
 

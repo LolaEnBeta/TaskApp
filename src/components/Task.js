@@ -3,7 +3,7 @@ import React from 'react';
 class Task extends React.Component {
 
     render() {
-        return(
+        return (
             <div className="col-md-3">
                 <div className="card mt-5 mb-5">
                     <div className="card-header">
