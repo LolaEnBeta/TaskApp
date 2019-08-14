@@ -19,12 +19,13 @@ class Task extends React.Component {
                     <button onClick={this.deleteTask.bind(this)}>
                         Delete
                     </button>
+                    <span>Task id: {this.props.id}</span>
                 </div>
             </div>
         );
     }
     deleteTask() {
-        let taskToDelete = this.props.name
+        let taskToDelete = this.props.id
 
         this.props.onTaskDeleted(taskToDelete);
     }

@@ -1,8 +1,12 @@
 import React from 'react';
 
 class TaskForm extends React.Component {
-
-
+    constructor() {
+        super();
+        this.state = {
+            counterId: 0
+        }
+    }
     render() {
 
         return (
@@ -40,12 +44,20 @@ class TaskForm extends React.Component {
             </div>
         );
     }
+
     saveTask(e) {
         const nameInput = document.getElementById("name");
         const descriptionInput = document.getElementById("description");
         const priorityInput = document.getElementById("priority");
 
+        let counterId = this.state.counterId + 1
+
+        this.setState({
+            counterId: counterId
+        })
+
         let newTask = {
+            id: this.state.counterId,
             name: nameInput.value,
             description: descriptionInput.value,
             priority: priorityInput.value

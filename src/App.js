@@ -12,10 +12,10 @@ class App extends React.Component {
   }
 
   render() {
-    const removeTask = name => {
+    const removeTask = id => {
       const taskIndex = this.state.tasks.map(task => {
-        return task.name
-      }).indexOf(name);
+        return task.id
+      }).indexOf(id);
 
       let tasks = this.state.tasks;
       tasks.splice(taskIndex, 1);
@@ -25,6 +25,7 @@ class App extends React.Component {
     const tasks = this.state.tasks.map(task => {
       return (
         <Task onTaskDeleted={removeTask.bind(this)}
+          id={task.id}
           name={task.name}
           description={task.description}
           priority={task.priority} />
